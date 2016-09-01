@@ -493,7 +493,7 @@ public class AddUser extends javax.swing.JFrame {
             int i = Integer.parseInt(s);
             System.out.println(s);
             position.getSelectedItem();
-            MyDb.set("insert into adduser values('0','"+uid.getText()+"','"+fname.getText()+"','"+lname.getText()+"','"+nic.getText()+"','"+dob.getText()+"','"+gendertxt.getText()+"','"+i+"','"+position.getSelectedItem()+"','"+salary.getText()+"','"+email.getText()+"','"+phone.getText()+"','"+mobile.getText()+"','"+address.getText()+"','"+city.getText()+"','"+uid.getText()+"')");
+            MyDb.set("insert into adduser values('"+uid.getText()+"','"+fname.getText()+"','"+lname.getText()+"','"+nic.getText()+"','"+dob.getText()+"','"+gendertxt.getText()+"','"+i+"','"+position.getSelectedItem()+"','"+salary.getText()+"','"+email.getText()+"','"+phone.getText()+"','"+mobile.getText()+"','"+address.getText()+"','"+city.getText()+"','"+uid.getText()+"')");
             System.out.println("super");
             MyDb.set("insert into log values('0','"+uid.getText()+"','"+uid.getText()+"')");
         } catch (Exception ex) {

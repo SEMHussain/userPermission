@@ -54,6 +54,7 @@ public class DATE extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
 
         jButton1.setText("jButton1");
@@ -83,6 +84,8 @@ public class DATE extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         jMenu3.setText("jMenu3");
+        jMenu3.add(jSeparator1);
+
         jMenu1.add(jMenu3);
 
         jMenuBar1.add(jMenu1);
@@ -210,6 +213,7 @@ public class DATE extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables
 }

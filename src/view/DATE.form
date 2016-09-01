@@ -21,6 +21,10 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jMenu3"/>
               </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
+                </MenuItem>
+              </SubComponents>
             </Menu>
           </SubComponents>
         </Menu>
