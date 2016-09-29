@@ -10,7 +10,7 @@ public class MyDb {
     public static void getConnection() throws Exception
     {
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tharaka", "root", "1234");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/att", "root", "1234");
     }
     public static void set(String sql) throws Exception
     {   
