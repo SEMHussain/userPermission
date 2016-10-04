@@ -13,6 +13,7 @@ import java.util.Date;
 import javax.swing.JComponent;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.basic.BasicMenuBarUI;
 
 /**
@@ -32,7 +33,7 @@ public class DATE extends javax.swing.JFrame {
        g.fillRect ( 0, 0, c.getWidth (), c.getHeight () );
     }
 } );
-         
+      jComboBox1.getEditor().getEditorComponent().setBackground(Color.YELLOW);    
     }
 
     /**
@@ -158,8 +159,9 @@ public class DATE extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      Component c = jSpinner1.getEditor().getComponent(0);
-c.setBackground(Color.BLUE);
+//      Component c = jSpinner1.getEditor().getComponent(0);
+//c.setBackground(Color.BLUE);
+        jComboBox1.getEditor().getEditorComponent().setBackground(Color.YELLOW);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -172,8 +174,7 @@ c.setBackground(Color.BLUE);
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-             UIManager.put("Menu.background", Color.GREEN);
-                UIManager.put("MenuItem.background", Color.MAGENTA);
+            UIManager.put("ComboBox.background", new ColorUIResource(Color.yellow));
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
