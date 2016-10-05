@@ -18,7 +18,7 @@ public class MyDb {
             {
             getConnection();
             }
-            con.createStatement().execute(sql);
+            con.createStatement().executeUpdate(sql);
     }
     public static ResultSet search(String sql) throws Exception
     {
