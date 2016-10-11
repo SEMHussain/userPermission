@@ -346,6 +346,11 @@ public class UserView extends javax.swing.JFrame {
         img.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         pw.setText("CHANGE PASSWORD");
+        pw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwActionPerformed(evt);
+            }
+        });
 
         editUpdate.setText("EDIT");
         editUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -584,6 +589,10 @@ public class UserView extends javax.swing.JFrame {
     private void attendanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_attendanceKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_attendanceKeyTyped
+
+    private void pwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwActionPerformed
+        
+    }//GEN-LAST:event_pwActionPerformed
 
     /**
      * @param args the command line arguments
