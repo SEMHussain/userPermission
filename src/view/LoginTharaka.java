@@ -112,7 +112,7 @@ public class LoginTharaka extends javax.swing.JFrame {
        while(rs.next()){
        
 //           System.out.println(rs.getString(1));
-           Main m = new Main(rs.getString(1));
+           MainTharaka m = new MainTharaka(rs.getString(1));
            m.setVisible(true);
        
        }

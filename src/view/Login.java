@@ -35,6 +35,7 @@ public class Login extends javax.swing.JFrame {
         un = new javax.swing.JTextField();
         pw = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -47,6 +48,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,6 +62,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(134, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2)
                     .addComponent(jButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(pw)
@@ -69,18 +78,19 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            String pwp = new String(pw.getPassword());
+        String pwp = new String(pw.getPassword());
         try {
-            ResultSet rs = MyDb.search("select * from log where userid='"+un.getText()+"' and password='"+pwp+"'");
-            if(rs.next())
-            {
+            ResultSet rs = MyDb.search("select * from log where userid='" + un.getText() + "' and password='" + pwp + "'");
+            if (rs.next()) {
                 System.out.println("kop");
                 String logid = rs.getString(2);
                 UserView uv = new UserView(logid);
@@ -91,6 +101,27 @@ public class Login extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String pwd = new String(pw.getPassword());
+        try {
+            ResultSet rs = MyDb.search("select * from log where userid='" + un.getText() + "' and password='" + pwd + "'");
+            if (rs.next()) {
+                if ("admin".equals(rs.getString(2))) {
+                    new MainView().setVisible(true);
+                }
+                else
+                {
+                    String logid = rs.getString(2);
+                UserView uv = new UserView(logid);
+                uv.setVisible(true);
+                this.dispose();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +160,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPasswordField pw;
     private javax.swing.JTextField un;

@@ -72,8 +72,8 @@
                           <Component id="img" min="-2" pref="105" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="pw" linkSize="1" min="-2" max="-2" attributes="0"/>
                               <Component id="editUpdate" linkSize="1" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="jButton1" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -99,11 +99,11 @@
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="editUpdate" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="pw" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="editUpdate" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="img" min="-2" pref="127" max="-2" attributes="0"/>
                           </Group>
@@ -525,7 +525,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="pw">
           <Properties>
             <Property name="text" type="java.lang.String" value="CHANGE PASSWORD"/>
           </Properties>
@@ -573,11 +573,11 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="city1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="phone1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="email1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="mobile1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="address1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="month" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="absent" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="attendance" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="halfday" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                          <Component id="shortLeave" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
@@ -595,23 +595,23 @@
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel18" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="mobile1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="halfday" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel17" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="address1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="shortLeave" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="email1" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="attendance" min="-2" pref="27" max="-2" attributes="0"/>
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="phone1" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="absent" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="city1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="month" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel21" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="23" max="32767" attributes="0"/>
@@ -636,17 +636,17 @@
                 <Property name="text" type="java.lang.String" value="Short Leave"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="city1">
+            <Component class="javax.swing.JTextField" name="month">
             </Component>
-            <Component class="javax.swing.JTextField" name="email1">
+            <Component class="javax.swing.JTextField" name="attendance">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="email1ActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="email1KeyPressed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="email1KeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="email1KeyTyped"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="attendanceActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="attendanceKeyPressed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="attendanceKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="attendanceKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="phone1">
+            <Component class="javax.swing.JTextField" name="absent">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
@@ -664,7 +664,7 @@
                 <Property name="text" type="java.lang.String" value="Attendance"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="mobile1">
+            <Component class="javax.swing.JTextField" name="halfday">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
@@ -674,7 +674,7 @@
                 <Property name="text" type="java.lang.String" value="Month"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="address1">
+            <Component class="javax.swing.JTextField" name="shortLeave">
             </Component>
           </SubComponents>
         </Container>

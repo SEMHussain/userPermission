@@ -26,9 +26,9 @@ public class UserView extends javax.swing.JFrame {
         initComponents();
     }
     String uidedit;
-    UserView(String logid) {
+    UserView(String logidU) {
         initComponents();
-        uidedit=logid;
+        uidedit=logidU;
         editTbl();
     }
 
@@ -76,19 +76,19 @@ public class UserView extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         address = new javax.swing.JTextField();
         img = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        pw = new javax.swing.JButton();
         editUpdate = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        city1 = new javax.swing.JTextField();
-        email1 = new javax.swing.JTextField();
-        phone1 = new javax.swing.JTextField();
+        month = new javax.swing.JTextField();
+        attendance = new javax.swing.JTextField();
+        absent = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        mobile1 = new javax.swing.JTextField();
+        halfday = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        address1 = new javax.swing.JTextField();
+        shortLeave = new javax.swing.JTextField();
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel9.setText("Mobile no");
@@ -345,7 +345,7 @@ public class UserView extends javax.swing.JFrame {
 
         img.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setText("CHANGE PASSWORD");
+        pw.setText("CHANGE PASSWORD");
 
         editUpdate.setText("EDIT");
         editUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -363,20 +363,20 @@ public class UserView extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel17.setText("Short Leave");
 
-        email1.addActionListener(new java.awt.event.ActionListener() {
+        attendance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email1ActionPerformed(evt);
+                attendanceActionPerformed(evt);
             }
         });
-        email1.addKeyListener(new java.awt.event.KeyAdapter() {
+        attendance.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                email1KeyPressed(evt);
+                attendanceKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                email1KeyReleased(evt);
+                attendanceKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                email1KeyTyped(evt);
+                attendanceKeyTyped(evt);
             }
         });
 
@@ -407,11 +407,11 @@ public class UserView extends javax.swing.JFrame {
                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(city1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mobile1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(address1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(absent, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(attendance, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(halfday, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shortLeave, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -426,18 +426,18 @@ public class UserView extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mobile1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(halfday, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(address1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(shortLeave, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(attendance, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(absent, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(city1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -455,8 +455,8 @@ public class UserView extends javax.swing.JFrame {
                         .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                            .addComponent(pw)
+                            .addComponent(editUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -465,7 +465,7 @@ public class UserView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {editUpdate, jButton1});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {editUpdate, pw});
 
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -478,11 +478,11 @@ public class UserView extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(editUpdate)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(pw)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
+                                .addComponent(editUpdate))
                             .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -549,10 +549,12 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_salaryActionPerformed
 
     private void editUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUpdateActionPerformed
-       if(editUpdate.getText().equals("Update"))
+       if(editUpdate.getText().equalsIgnoreCase("Update"))
        {
            try {
-               MyDb.set("update adduser set fname='"+fname.getText()+"',lname='"+lname.getText()+"',nic='"+nic.getText()+"',dob='"+dob.getText()+"',gender='"+gendertxt.getText()+"',age='"+age.getText()+"',position='"+position.getSelectedItem()+"',salary='"+salary.getText()+"',email='"+email.getText()+"',pnum='"+phone.getText()+"',tnum='"+mobile.getText()+"',address='"+address.getText()+"',city='"+city.getText()+"' where user_id='"+uid.getText()+"' ");
+               String s = age.getText().substring(0, 2);
+            int i = Integer.parseInt(s);
+               MyDb.set("update adduser set fname='"+fname.getText()+"',lname='"+lname.getText()+"',nic='"+nic.getText()+"',dob='"+dob.getText()+"',gender='"+gendertxt.getText()+"',age='"+i+"',position='"+position.getSelectedItem()+"',salary='"+salary.getText()+"',email='"+email.getText()+"',pnum='"+phone.getText()+"',tnum='"+mobile.getText()+"',address='"+address.getText()+"',city='"+city.getText()+"' where userid='"+uid.getText()+"' ");
            } catch (Exception e) {
                e.printStackTrace();
            }
@@ -567,21 +569,21 @@ public class UserView extends javax.swing.JFrame {
                
     }//GEN-LAST:event_editUpdateActionPerformed
 
-    private void email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email1ActionPerformed
+    private void attendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email1ActionPerformed
+    }//GEN-LAST:event_attendanceActionPerformed
 
-    private void email1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email1KeyPressed
+    private void attendanceKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_attendanceKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_email1KeyPressed
+    }//GEN-LAST:event_attendanceKeyPressed
 
-    private void email1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email1KeyReleased
+    private void attendanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_attendanceKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_email1KeyReleased
+    }//GEN-LAST:event_attendanceKeyReleased
 
-    private void email1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_email1KeyTyped
+    private void attendanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_attendanceKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_email1KeyTyped
+    }//GEN-LAST:event_attendanceKeyTyped
 
     /**
      * @param args the command line arguments
@@ -622,19 +624,18 @@ public class UserView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField absent;
     private javax.swing.JTextField address;
-    private javax.swing.JTextField address1;
     private javax.swing.JTextField age;
+    private javax.swing.JTextField attendance;
     private javax.swing.JTextField city;
-    private javax.swing.JTextField city1;
     private javax.swing.JTextField dob;
     private javax.swing.JButton editUpdate;
     private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
     private javax.swing.JTextField fname;
     private javax.swing.JTextField gendertxt;
+    private javax.swing.JTextField halfday;
     private javax.swing.JLabel img;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -663,12 +664,13 @@ public class UserView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField lname;
     private javax.swing.JTextField mobile;
-    private javax.swing.JTextField mobile1;
+    private javax.swing.JTextField month;
     private javax.swing.JTextField nic;
     private javax.swing.JTextField phone;
-    private javax.swing.JTextField phone1;
     private javax.swing.JComboBox position;
+    private javax.swing.JButton pw;
     private javax.swing.JTextField salary;
+    private javax.swing.JTextField shortLeave;
     private javax.swing.JTextField uid;
     // End of variables declaration//GEN-END:variables
 
@@ -770,25 +772,26 @@ public class UserView extends javax.swing.JFrame {
 
     private void editTbl() {
         try {
-            ResultSet rs = MyDb.search("select * from adduser where user_id='"+uidedit+"'");
+            ResultSet rs = MyDb.search("select * from adduser where userid='"+uidedit+"'");
             while(rs.next())
             {
-            uid.setText(rs.getString(2));
+            uid.setText(rs.getString(1));
             uid.setEnabled(false);
-            fname.setText(rs.getString(3));
-            lname.setText(rs.getString(4));
-            nic.setText(rs.getString(5));
-            dob.setText(rs.getString(6));
-            gendertxt.setText(rs.getString(7));
-            age.setText(rs.getString(8));
-            position.setSelectedItem(rs.getString(9));
-            salary.setText(rs.getString(10));
-            email.setText(rs.getString(11));
-            phone.setText(rs.getString(12));
-            mobile.setText(rs.getString(13));
-            address.setText(rs.getString(14));
-            city.setText(rs.getString(15));
+            fname.setText(rs.getString(2));
+            lname.setText(rs.getString(3));
+            nic.setText(rs.getString(4));
+            dob.setText(rs.getString(5));
+            gendertxt.setText(rs.getString(6));
+            age.setText(rs.getString(7));
+            position.setSelectedItem(rs.getString(8));
+            salary.setText(rs.getString(9));
+            email.setText(rs.getString(10));
+            phone.setText(rs.getString(11));
+            mobile.setText(rs.getString(12));
+            address.setText(rs.getString(13));
+            city.setText(rs.getString(14));
             editUpdate.setText("Update");
+            pw.setVisible(false);
             }
         } catch (Exception ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
