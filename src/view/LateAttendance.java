@@ -48,9 +48,11 @@ public class LateAttendance extends javax.swing.JFrame {
         tm = new javax.swing.JLabel();
         java.util.Date d = new java.util.Date();
         SpinnerDateModel sm = new SpinnerDateModel(d,null,null,Calendar.HOUR_OF_DAY);
-        sni = new javax.swing.JSpinner(sm);
+        spi = new javax.swing.JSpinner(sm);
         jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        cmb = new javax.swing.JComboBox();
+        msg = new javax.swing.JLabel();
+        eid = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -59,7 +61,7 @@ public class LateAttendance extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
@@ -71,12 +73,12 @@ public class LateAttendance extends javax.swing.JFrame {
         tm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(tm, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 127, 41));
 
-        JSpinner.DateEditor de = new JSpinner.DateEditor(sni,"hh:mm:ss");
-        sni.setEditor(de);
-        sni.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
-        sni.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        sni.setOpaque(false);
-        jPanel1.add(sni, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 130, 42));
+        JSpinner.DateEditor de = new JSpinner.DateEditor(spi,"hh:mm:ss");
+        spi.setEditor(de);
+        spi.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        spi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        spi.setOpaque(false);
+        jPanel1.add(spi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 130, 42));
 
         jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -84,16 +86,20 @@ public class LateAttendance extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(153, 255, 51));
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Value", "Morning Half Day", "Evening Half Day", "Short Leave", "Absent", " " }));
-        jComboBox1.setBorder(null);
-        jComboBox1.setFocusable(false);
-        jComboBox1.setOpaque(false);
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, 30));
+        cmb.setBackground(new java.awt.Color(153, 255, 51));
+        cmb.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        cmb.setForeground(new java.awt.Color(255, 255, 255));
+        cmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Value", "Morning Half Day", "Evening Half Day", "Short Leave", "Absent", " " }));
+        cmb.setBorder(null);
+        cmb.setFocusable(false);
+        cmb.setOpaque(false);
+        jPanel1.add(cmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, 30));
+
+        msg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 180, 40));
+        jPanel1.add(eid, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 130, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 280));
 
@@ -117,7 +123,13 @@ public class LateAttendance extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        try {
+            MyDb.set("insert into inout_copy(userid,date,intime,details) values('"+eid.getText()+"','"+tm.getText()+"','"+spi.getValue()+"','"+cmb.getSelectedItem()+"')");   
+            msg.setText("Welcome");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -163,9 +175,10 @@ public class LateAttendance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox cmb;
+    private javax.swing.JTextField eid;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -174,14 +187,15 @@ public class LateAttendance extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner sni;
+    private javax.swing.JLabel msg;
+    private javax.swing.JSpinner spi;
     private javax.swing.JLabel tm;
     // End of variables declaration//GEN-END:variables
 
     private void spinner() {
-        Component c = sni.getEditor().getComponent(0);
+        Component c = spi.getEditor().getComponent(0);
         c.setForeground(Color.BLUE);
-        JComponent editor = sni.getEditor();
+        JComponent editor = spi.getEditor();
         JSpinner.DefaultEditor spinnerEditor = (JSpinner.DefaultEditor)editor;
         spinnerEditor.getTextField().setHorizontalAlignment(JTextField.CENTER);
     }

@@ -25,11 +25,18 @@ public class UserView extends javax.swing.JFrame {
     public UserView() {
         initComponents();
     }
-    String uidedit;
+    String userView;
+    String userUpdate;
     UserView(String logidU) {
         initComponents();
-        uidedit=logidU;
+        userUpdate=logidU;
         editTbl();
+    }
+    
+    UserView(String logidU1 , String logidU2) {
+        initComponents();
+        userView=logidU1;
+        userViewTbl();
     }
 
     /**
@@ -781,7 +788,7 @@ public class UserView extends javax.swing.JFrame {
 
     private void editTbl() {
         try {
-            ResultSet rs = MyDb.search("select * from adduser where userid='"+uidedit+"'");
+            ResultSet rs = MyDb.search("select * from adduser where userid='"+userUpdate+"'");
             while(rs.next())
             {
             uid.setText(rs.getString(1));
@@ -800,7 +807,47 @@ public class UserView extends javax.swing.JFrame {
             address.setText(rs.getString(13));
             city.setText(rs.getString(14));
             editUpdate.setText("Update");
+            attendance.setEnabled(false);
+            absent.setEnabled(false);
+            halfday.setEnabled(false);
+            shortLeave.setEnabled(false);
+            month.setEnabled(false);
             pw.setVisible(false);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void userViewTbl() {
+             try {
+            ResultSet rs = MyDb.search("select * from adduser where userid='"+userView+"'");
+            while(rs.next())
+            {
+            uid.setText(rs.getString(1));
+            uid.setEnabled(false);
+            fname.setText(rs.getString(2));
+            lname.setText(rs.getString(3));
+            nic.setText(rs.getString(4));
+            dob.setText(rs.getString(5));
+            gendertxt.setText(rs.getString(6));
+            age.setText(rs.getString(7));
+            position.setSelectedItem(rs.getString(8));
+            salary.setText(rs.getString(9));
+            email.setText(rs.getString(10));
+            phone.setText(rs.getString(11));
+            mobile.setText(rs.getString(12));
+            address.setText(rs.getString(13));
+            city.setText(rs.getString(14));
+            
+//            editUpdate.setText("Update");
+            
+            attendance.setEditable(false);
+            absent.setEditable(false);
+            halfday.setEditable(false);
+            shortLeave.setEditable(false);
+            month.setEditable(false);
+//            pw.setVisible(false);
             }
         } catch (Exception ex) {
             Logger.getLogger(UserView.class.getName()).log(Level.SEVERE, null, ex);
